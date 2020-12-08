@@ -19,11 +19,11 @@ function Submit() {
                 <h1>SUBMIT</h1>
             </div>
             {photos.length || !submitClicked ? <PhotosList/> : <p>Sorry there is no photos with your settings</p>}
-            <div onClick={async () => {
+            {photos.length && <div onClick={async () => {
                 await dispatch(nextPage(Number(page) + 1, rover, camera, sol));
             }}>
                 Load more
-            </div>
+            </div>}
         </>
     )
 }
