@@ -1,7 +1,7 @@
 # Mars journey
 ## Single page application for viewing mars photos made by NASA rovers
 
-###For check out app with npm 
+### For check out app with npm 
 
 ```
 npm install

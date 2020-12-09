@@ -39,6 +39,11 @@ const submitStyles = makeStyles(() => ({
     finishMessage: {
         width: '100%',
         textAlign: 'center'
+    },
+    noMoreMessage: {
+        width: '100%',
+        textAlign: 'center',
+        fontSize: '16pt'
     }
 }));
 

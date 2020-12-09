@@ -48,9 +48,11 @@ function Submit() {
                         <Button className={classes.root}>
                             Load more
                         </Button>
-                    </div> : <p>No more photos</p>}
-        </div>
-    )
+                    </div> :
+                    <div className={classes.noMoreMessage}>
+                        <p>No more photos</p>
+                    </div>}
+        </div>)
 }
 
 export default Submit;
