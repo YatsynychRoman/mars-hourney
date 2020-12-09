@@ -2,9 +2,9 @@ import {CAMERA_UPDATE, GET_NEW_PHOTOS, NEXT_PAGE, ROVER_SELECT, SOL_UPDATE} from
 
 const emptyStore = {
     photos: [],
-    rover: 'opportunity',
+    rover: null,
     camera: null,
-    sol: '1',
+    sol: 1000,
     page: '1'
 };
 const initStore = {...emptyStore};

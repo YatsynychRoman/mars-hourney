@@ -28,7 +28,6 @@ export function roverSelect(roverName) {
 export function cameraUpdate(camera) {
     return async dispatch => {
         try {
-            console.log(camera)
             dispatch({type: CAMERA_UPDATE, payload: camera});
         } catch (e) {
             console.log(e);
@@ -63,7 +62,7 @@ export function getRovers() {
     return async dispatch => {
         try {
             const {data: rovers} = await axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/?api_key=${process.env.REACT_APP_API_KEY}`);
-            console.log('dispatch rovers');
+
             dispatch({type: GET_ROVERS, payload: rovers})
         } catch (e) {
             console.log(e)
