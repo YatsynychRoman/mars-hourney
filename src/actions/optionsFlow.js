@@ -45,12 +45,14 @@ export function solUpdate(sol) {
     }
 }
 
-export function nextPage(page, rover, camera, sol) {
+export function nextPage(page, rover, camera, sol, setNewPhotos) {
     return async dispatch => {
         try {
             dispatch({type: NEXT_PAGE, payload: page})
             let {data: {photos}} = await axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?camera=${camera}&sol=${sol}&page=${page}&api_key=${process.env.REACT_APP_API_KEY}`)
 
+            console.log(setNewPhotos)
+            if(!photos.length) setNewPhotos(false);
             dispatch({type: GET_NEW_PHOTOS, payload: photos})
         } catch (e) {
             console.log(e)

@@ -10,7 +10,7 @@ import Button from "@material-ui/core/Button";
 function Submit() {
     const dispatch = useDispatch();
     const [submitClicked, setSubmitClicked] = useState(false);
-
+    const [newPhotos, setNewPhotos] = useState(true);
     const classes = submitStyles();
 
     const {rover, sol, camera, photos, page} = useSelector(({photosInfo}) => photosInfo);
@@ -40,13 +40,15 @@ function Submit() {
                 </Button>
             </div>
             {photos.length || !submitClicked ? <PhotosList/> : <p>Sorry there is no photos with your settings</p>}
-            {photos.length ? <div className={classes.loadMoreDiv} onClick={async () => {
-                await dispatch(nextPage(Number(page) + 1, rover, camera, sol));
-            }}>
-                <Button className={classes.root}>
-                    Load more
-                </Button>
-            </div> : <></>}
+            {!photos.length ? <></> :
+                newPhotos ?
+                    <div className={classes.loadMoreDiv} onClick={async () => {
+                        await dispatch(nextPage(Number(page) + 1, rover, camera, sol, setNewPhotos));
+                    }}>
+                        <Button className={classes.root}>
+                            Load more
+                        </Button>
+                    </div> : <p>No more photos</p>}
         </div>
     )
 }
