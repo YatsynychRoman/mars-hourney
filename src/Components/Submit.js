@@ -35,7 +35,7 @@ function Submit() {
                 setSubmitClicked(true);
                 dispatch(getPhotos(rover, sol, camera, page))
             }}>
-                <Button className={classes.root}>
+                <Button className={classes.root} style={{color: 'white'}}>
                     Submit
                 </Button>
             </div>
@@ -45,7 +45,7 @@ function Submit() {
                     <div className={classes.loadMoreDiv} onClick={async () => {
                         await dispatch(nextPage(Number(page) + 1, rover, camera, sol, setNewPhotos));
                     }}>
-                        <Button className={classes.root}>
+                        <Button className={classes.root} style={{color: 'white'}}>
                             Load more
                         </Button>
                     </div> :

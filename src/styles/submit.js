@@ -6,7 +6,6 @@ const submitStyles = makeStyles(() => ({
         margin: '0 15px',
         width: 250,
         height: 50,
-        color: 'white',
         '&:hover': {
             background: 'rgba(255, 255, 255, 0.5)'
         }
